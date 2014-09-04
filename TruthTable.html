@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <script type="text/javascript">
         /*
                 Christopher Vasquez
@@ -5,18 +6,18 @@
                 Purpose: Trust Table in Javascript
         */
 </script>
-<!DOCTYPE html>
+
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
-    <head>
+
+<head>
+
+        <meta name="viewport" content="width=device-width" >
         <title>Truth Table</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-    </head>
+</head>  
     <body>
             <h1> Truth Table</h1>
         <table width="200" border="1">
@@ -36,79 +37,82 @@ and open the template in the editor.
                 <th>!X&&!Y</th>
             </tr>
             <tr>
-            <script type="text/javascript">
+            <script>
                 var x=true;
                 var y=true;
-           document.write("<td>"+($x?"T":"F")+"</td>");
-           document.write("<td>"+($y?"T":"F")+"</td>");
-           document.write("<td>"+(!$x?"T":"F")+"</td>");
-           document.write("<td>"+(!$y?"T":"F")+"</td>");
-           document.write("<td>"+($x&&$y?"T":"F")+"</td>");
-           document.write("<td>"+($x||$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y||$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y^$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y^$x?"T":"F")+"</td>");
-           document.write("<td>"+(!($x&&$y)?"T":"F")+"</td>");
-           document.write("<td>"+(!$x||!$y?"T":"F")+"</td>");
-           document.write("<td>"+(!($x||$y)?"T":"F")+"</td>");
-           document.write("<td>"+(!$x&&!$y?"T":"F")+"</td>");
+           document.write("<td>"+(x?'T':'F')+"</td>");
+           document.write("<td>"+(y?'T':'F')+"</td>");
+           document.write("<td>"+(!x?'T':'F')+"</td>");
+           document.write("<td>"+(!y?'T':'F')+"</td>");
+           document.write("<td>"+(x&&y?'T':'F')+"</td>");
+           document.write("<td>"+(x||y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y||y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y^y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y^x?'T':'F')+"</td>");
+           document.write("<td>"+(!(x&&y)?'T':'F')+"</td>");
+           document.write("<td>"+(!x||!y?'T':'F')+"</td>");
+           document.write("<td>"+(!(x||y)?'T':'F')+"</td>");
+           document.write("<td>"+(!x&&!y?'T':'F')+"</td>");
             </script>    
             </tr>
             <tr>
             <script type="text/javascript">
                 var y=false;
-           document.write("<td>"+($x?"T":"F")+"</td>");
-           document.write("<td>"+($y?"T":"F")+"</td>");
-           document.write("<td>"+(!$x?"T":"F")+"</td>");
-           document.write("<td>"+(!$y?"T":"F")+"</td>");
-           document.write("<td>"+($x&&$y?"T":"F")+"</td>");
-           document.write("<td>"+($x||$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y||$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y^$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y^$x?"T":"F")+"</td>");
-           document.write("<td>"+(!($x&&$y)?"T":"F")+"</td>");
-           document.write("<td>"+(!$x||!$y?"T":"F")+"</td>");
-           document.write("<td>"+(!($x||$y)?"T":"F")+"</td>");
-           document.write("<td>"+(!$x&&!$y?"T":"F")+"</td>");
+           document.write("<td>"+(x?'T':'F')+"</td>");
+           document.write("<td>"+(y?'T':'F')+"</td>");
+           document.write("<td>"+(!x?'T':'F')+"</td>");
+           document.write("<td>"+(!y?'T':'F')+"</td>");
+           document.write("<td>"+(x&&y?'T':'F')+"</td>");
+           document.write("<td>"+(x||y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y||y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y^y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y^x?'T':'F')+"</td>");
+           document.write("<td>"+(!(x&&y)?'T':'F')+"</td>");
+           document.write("<td>"+(!x||!y?'T':'F')+"</td>");
+           document.write("<td>"+(!(x||y)?'T':'F')+"</td>");
+           document.write("<td>"+(!x&&!y?'T':'F')+"</td>");
             </script>    
             </tr>
             <tr>
             <script type="text/javascript">
                 var x=false;
-           document.write("<td>"+($x?"T":"F")+"</td>");
-           document.write("<td>"+($y?"T":"F")+"</td>");
-           document.write("<td>"+(!$x?"T":"F")+"</td>");
-           document.write("<td>"+(!$y?"T":"F")+"</td>");
-           document.write("<td>"+($x&&$y?"T":"F")+"</td>");
-           document.write("<td>"+($x||$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y||$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y^$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y^$x?"T":"F")+"</td>");
-           document.write("<td>"+(!($x&&$y)?"T":"F")+"</td>");
-           document.write("<td>"+(!$x||!$y?"T":"F")+"</td>");
-           document.write("<td>"+(!($x||$y)?"T":"F")+"</td>");
-           document.write("<td>"+(!$x&&!$y?"T":"F")+"</td>");
+                var y=true;
+           document.write("<td>"+(x?'T':'F')+"</td>");
+           document.write("<td>"+(y?'T':'F')+"</td>");
+           document.write("<td>"+(!x?'T':'F')+"</td>");
+           document.write("<td>"+(!y?'T':'F')+"</td>");
+           document.write("<td>"+(x&&y?'T':'F')+"</td>");
+           document.write("<td>"+(x||y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y||y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y^y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y^x?'T':'F')+"</td>");
+           document.write("<td>"+(!(x&&y)?'T':'F')+"</td>");
+           document.write("<td>"+(!x||!y?'T':'F')+"</td>");
+           document.write("<td>"+(!(x||y)?'T':'F')+"</td>");
+           document.write("<td>"+(!x&&!y?'T':'F')+"</td>");
             </script>    
             </tr>
             <tr>
                 <script type="text/javascript">
                 var x=false;
                 var y=false;
-           document.write("<td>"+($x?"T":"F")+"</td>");
-           document.write("<td>"+($y?"T":"F")+"</td>");
-           document.write("<td>"+(!$x?"T":"F")+"</td>");
-           document.write("<td>"+(!$y?"T":"F")+"</td>");
-           document.write("<td>"+($x&&$y?"T":"F")+"</td>");
-           document.write("<td>"+($x||$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y||$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y^$y?"T":"F")+"</td>");
-           document.write("<td>"+($x^$y^$x?"T":"F")+"</td>");
-           document.write("<td>"+(!($x&&$y)?"T":"F")+"</td>");
-           document.write("<td>"+(!$x||!$y?"T":"F")+"</td>");
-           document.write("<td>"+(!($x||$y)?"T":"F")+"</td>");
-           document.write("<td>"+(!$x&&!$y?"T":"F")+"</td>");
+           document.write("<td>"+(x?'T':'F')+"</td>");
+           document.write("<td>"+(y?'T':'F')+"</td>");
+           document.write("<td>"+(!x?'T':'F')+"</td>");
+           document.write("<td>"+(!y?'T':'F')+"</td>");
+           document.write("<td>"+(x&&y?'T':'F')+"</td>");
+           document.write("<td>"+(x||y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y||y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y^y?'T':'F')+"</td>");
+           document.write("<td>"+(x^y^x?'T':'F')+"</td>");
+           document.write("<td>"+(!(x&&y)?'T':'F')+"</td>");
+           document.write("<td>"+(!x||!y?'T':'F')+"</td>");
+           document.write("<td>"+(!(x||y)?'T':'F')+"</td>");
+           document.write("<td>"+(!x&&!y?'T':'F')+"</td>");
             </script>    
             
             </tr>
+</table>
+           
     </body>
 </html>
