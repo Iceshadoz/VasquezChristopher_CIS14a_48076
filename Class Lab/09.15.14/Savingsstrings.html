@@ -12,19 +12,20 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Savings Strings</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <h1>Savings Table</h1>
+        <h1>Savings String Table</h1>
         <script type="text/javascript">
           var balance =100; //unit =$'s
           var intRate = 5; //unit =perecentage
+          var str="";
          
         //output the balance
-        document.write("<p>Intial Balance  = $"balance+"</p>");
-        document.write("<p>Interest Rate   = "intRate+"%</p>");
+       document.write("<p>Initial Balance = $"+balance+"</p>");
+       document.write("<p>Interest Rate   = "+intRate+"%</p>");
         </script>
           
    <table width="200" border="1">
@@ -37,17 +38,16 @@ and open the template in the editor.
         for(var year=1; year<=100;year++){
         str+="<tr>";
         str+=("<td>"+year+"</td>");
-            document.write("<tr>");
-            document.write("<td>"+year+"</td>)";
             
             //Calculate the balance
             balance*=(1+intRate/100);
-            balance=balance.tofixed(2);
-            str+=("<td>"+balnace+"</td>)";
-            str+="</tr>
+            balance=balance.toFixed(2);
+            str+=("<td>"+balance+"</td>");
+            str+="</tr>";
             
             
         }
+        document.write(str);
     </script>
     </table>
     </body>
