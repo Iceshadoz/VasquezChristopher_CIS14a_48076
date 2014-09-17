@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Triple Switch</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -25,19 +25,23 @@ and open the template in the editor.
 	document.write("<h1>Over time start =  "+ovt    +" (hrs)</h1>");
         
 	//Determine our paycheck
-	switch(payChk){
-		case(hours<ovt):{
-			var payChk=hours*payRate;break;
-                case (hours>=ovt):{
-                    payChk=hours*payRate +(hours-ovt) *payRate;       
+	switch(hours<Trip){
+                case true:{
+		    payChk=hours*payRate;
+                                   break
+                    }
+                case true:{
+                    payChk=hours*payRate +(hours-ovt) *payRate;
+                                                         break     
 		}
 		default:{
-			var payChk=hours*payRate +(hours-ovt) *payRate
+                    payChk=hours*payRate +(hours-ovt) *payRate
             +(hours-Trip) *payRate;
+                             
 		}
 	}
 	payChk=payChk.toFixed(2);
 	//Output our Pay Check
-	document.write("<h1>Our Pay Check = $"+payChk+"</h1");>
+	 document.write("<h1>Our Pay check = $"+payChk+"</h1>");
     </body>
 </html>

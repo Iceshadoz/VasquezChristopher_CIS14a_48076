@@ -13,7 +13,7 @@ and open the template in the editor.
     <body>
         <script type="text/javascript">
             //Declare and intialize variables
-            var hours=parseInt (math.rnadom()*20+30);
+            var hours=parseInt (Math.random()*20+30);
             var payRate=10; //($'s/hr)
             var ovt=20; 
             var Trip=40;//Hour at which over time starts
@@ -28,16 +28,15 @@ and open the template in the editor.
             //Determine our paycheck
             if(hours<=ovt){
                     payChk=hours*payRate;
-            }else if (hours>=ovt){
+            }else if(hours<Trip){
                     payChk=hours*payRate +(hours-ovt) *payRate;
-            
-            }else (hours>Trip) {
+            }else {
              payChk=hours*payRate +(hours-ovt) *payRate
             +(hours-Trip) *payRate;
-            }
+}
             payChk=payChk.toFixed(2);
             
-            document.write("<h1>Our Pay check = $payChk+</h1>");
+            document.write("<h1>Our Pay check = $"+payChk+"</h1>");
         </script>
     </body>
 </html>
