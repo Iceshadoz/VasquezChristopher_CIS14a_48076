@@ -1,0 +1,88 @@
+<script>
+  /*
+   * Christopher Vasquez
+   * September 15, 2014
+   * Purpose: Loop constructs -for
+   */
+</script><!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Savings Strings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <h1>Retirement Table</h1>
+        <script type="text/javascript">
+          var balance =100; //unit =$'s
+          var intRate = 5; //unit =perecentage
+          var deposit = 7500; //unit =$'2
+          var str="";
+         
+        //output the balance
+       document.write("<p>Initial Balance = $"+balance+"</p>");
+       document.write("<p>Interest Rate   = "+intRate+"%</p>");
+       document.write("<P>Deposit         = $"+deposit+"</p>");
+       //Declare your Table
+       var retTable[];
+       var cols=4
+       for(var col=0;cols;col++){
+           retTable[col]=[];
+       }
+       
+       //Initialize the first element
+       retTable[0][0]=0;
+       retTable[1][0]=balance;
+       retTable[2][0]=0;
+       retTable[3][0]=0;
+       //Populate the arrays
+       for(var year=1; year<=50;year++){
+           retTable[0][year]=year;
+           //Calculate the balance
+            retTable[2][year]=savings[year-1] * intRate/100
+            retTable[3][year]=interest[year].toFixed(2);
+            retTable[1][year]=parseFloat(interest[year]);
+            savings[year]=savings[year-1] + interest[year];
+            yearDep[year]=deposit;
+            savings[year]+=yearDep;
+            savings[year]=savings[year].toFixed(2);
+            savings[year]=parseFloat(savings[year]);
+        }    
+        </script>
+          
+   <table width="200" border="1">
+            <tr>
+                <th>Year</th>
+                <th>Savings $</th>
+                <th> Interest $</th>
+                <th>Deposit $</th>
+            </tr>
+        <script type="text/javascript">
+        //Generate a table
+        for(var year=1,year<=50;++year){
+        str+="<tr>";
+        str+=("<td>"+retTable[0][year].toFixed(2)+"</td>");
+            for(var col=0;cols;col++){
+        str+=("<td>"+retTable[col][year].toFixed(2)+"</td>");
+        }
+       
+        str+="</tr>";
+            
+    }
+        
+        document.write(str);
+        document.write("<P>Number of Rows"+retTable[0].length+"</p>");
+        document.write("<P>Number of Rows"+retTable[1].length+"</p>");
+        document.write("<P>Number of Rows"+retTable[2].length+"</p>");
+        document.write("<P>Number of Rows"+retTable[3].length+"</p>");
+        document.write("<P>Number of Columns"+retTable[0].length+"</p>");
+        document.write("<P>Number of Rows"+retTable[3].length+"</p>");
+    </script>
+    </table>
+    </body>
+</html>
