@@ -1,0 +1,65 @@
+<script>
+  /*
+   * Christopher Vasquez
+   * September 15, 2014
+   * Purpose: Loop constructs -for
+   */
+</script><!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Savings Strings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <h1>Savings String Table</h1>
+        <script type="text/javascript">
+          var ovt=20;//Hour at which over time starts
+          var Trip=40;//Hour at which triple time starts.
+          var tax = .10; //unit =$'s
+          var hour;
+          var str="";
+          var payRate = 11.50;
+
+         
+        //output the balance
+       
+        </script>
+          
+   <table width="200" border="1">
+            <tr>
+                <th>Hours</th>
+                <th>GrossPay</th>
+                <th>Payrate</th>
+                <th>Taxes</th>
+                <th>Net Pay</th>
+            </tr>
+
+
+        <script type="text/javascript">
+        //Generate a table
+        for(var hour=1; hour<=72;hour++){
+          var gross = hour*payRate;
+          var taxes = gross * tax;
+          var netPay = gross - taxes;
+            str+="<tr>";
+            str+="<td>"+hour+"</td>";
+            str+="<td>"+gross+"</td>";
+            str+="<td>"+payRate+"</td>";
+            str+="<td>"+taxes.toFixed(2)+"</td>";
+            str+="<td>"+netPay+"</td>";
+            
+            str+="</tr>";
+            
+            
+        }
+        document.write(str);
+    </script>
+    </table>
+    </body>
+</html>
