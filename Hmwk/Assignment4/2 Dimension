@@ -85,7 +85,7 @@ and open the template in the editor.
           
           
             str+="<tr>";
-            str+="<td>"+Table[0][hour]+"</td>";
+            str+="<td>"+Table[1][hour]+"</td>";
             str+="<td>"+Table[1][hour]+"</td>";
             str+="<td>"+payRate+"</td>";
             str+="<td>"+Table[2][hour].toFixed(2)+"</td>";

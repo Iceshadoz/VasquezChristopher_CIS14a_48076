@@ -24,28 +24,35 @@ and open the template in the editor.
           var tax = .10; //unit =$'s
           var str="";
           var payRate = 11.50;
-          var taxes;
-          var netPay;
-          var gross;
-          var hour;
-          var Rate;
+          var taxes=[];
+          var netPay=[];
+          var gross=[];
+          var hour=[];
+          var rate=[];
+          
+          
+          hour[0]=0;
+          gross[0]=0;
+          rate[0]= 0;
+          taxes[0]=0;
+          netPay[0]=0;
           for(var hour=1; hour<=72;hour++){
-              hour = hour;
+              rate[hour] = 11.50;
+              
               if (hour<=ovt){
-                  gross   = hour*payRate;
-                  taxes   = gross  * tax;
-                  netPay  = gross  - taxes ;
+                  gross[hour]   = hour * rate[hour];
               }else if(hour<=Trip){
-                  gross   = hour*payRate +(hour-ovt) *payRate;
-                  taxes   = gross  * tax;
-                  netPay  = gross  - taxes ;
+                  gross[hour]   = hour * rate[hour] +(hour-ovt) *rate[hour];
+                  rate[hour] = 23;
               }else{
-                  gross   = hour*payRate +(hour-ovt) *payRate + 
-                           (hour-Trip) *payRate;
-                  taxes   = gross  * tax;
-                  netPay  = gross  - taxes ;
+                  gross[hour]   = hour * rate[hour] +(hour-ovt) *rate[hour] + 
+                           (hour-Trip) *rate[hour];
+                   rate[hour] = 34.50;
+                  
               }
-          };
+                  taxes[hour] = gross[hour]  * tax;
+                  netPay[hour]= gross[hour]  - taxes[hour];
+          }
          
         //output the balance
        
@@ -64,30 +71,12 @@ and open the template in the editor.
         <script type="text/javascript">
         //Generate a table
         for(var hour=1; hour<=72;hour++){
-          
-               hour = hour;
-              if (hour<=ovt){
-                  gross   = hour*payRate;
-                  taxes   = gross  * tax;
-                  netPay  = gross  - taxes ;
-              }else if(hour<=Trip){
-                  gross   = hour*payRate +(hour-ovt) *payRate;
-                  taxes   = gross  * tax;
-                  netPay  = gross  - taxes ;
-              }else{
-                  gross   = hour*payRate +(hour-ovt) *payRate + 
-                           (hour-Trip) *payRate;
-                  taxes   = gross  * tax;
-                  netPay  = gross  - taxes ;
-              }
-          
-          
-            str+="<tr>";
+          str+="<tr>";
             str+="<td>"+hour+"</td>";
-            str+="<td>"+gross+"</td>";
-            str+="<td>"+payRate+"</td>";
-            str+="<td>"+taxes.toFixed(2)+"</td>";
-            str+="<td>"+netPay+"</td>";
+            str+="<td>"+gross[hour]+"</td>";
+            str+="<td>"+rate[hour]+"</td>";
+            str+="<td>"+taxes[hour].toFixed(2)+"</td>";
+            str+="<td>"+netPay[hour]+"</td>";
             
             str+="</tr>";
             

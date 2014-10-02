@@ -25,7 +25,7 @@ and open the template in the editor.
           var str="";
           var payRate = 11.50;
           var Table=[];
-          var cols=4;
+          var cols=5;
           for(var col=0;col<cols;col++){
                         Table[col]=[];
           }
@@ -37,24 +37,27 @@ and open the template in the editor.
           Table[1][0]=0; //gross[0]=0;
           Table[2][0]=0; //taxes[0]=0;
           Table[3][0]=0; //netPay[0]=0;
-          
+          Table[4][0]= 11.50; //pAYRATE
           
           
           
          for(var hour=1; hour<=72;hour++){
               Table[0][hour]=hour;
-              
-              if (hour<=ovt){
-                  Table[1][hour]  = Table[0][hour] * payRate;
+              Table[4][hour] = 11.50;
+              if (hour<ovt){
+                  Table[1][hour]  = Table[0][hour] *  Table[4][hour];
               }else if(hour<=Trip){
-                  Table[1][hour]  = Table[0][hour] * payRate +
-                                   (Table[0][hour]-ovt) * payRate;
+                  Table[1][hour]  = (Table[0][hour]) *  Table[4][hour] +
+                                    (Table[0][hour]-20) *   Table[4][hour] ;
+                                     Table[4][hour] = 23;
               }else{
-                  Table[1][hour]  = Table[0][hour] * payRate+
-                                   (Table[0][hour]-ovt) * payRate + 
-                                   (Table[0][hour]-Trip) *payRate;
-              }taxes[hour]    = Table[1][hour] * tax;
-              Table[3][hour]  = Table[1][hour] - Table[2][hour];
+                  Table[1][hour]  =  Table[0][hour] *   Table[4][hour]+
+                                    (Table[0][hour]-ovt) *   Table[4][hour] + 
+                                    (Table[0][hour]-Trip) *  Table[4][hour];
+                                     Table[4][hour] = 34.50;
+              }
+                  Table[2][hour] =   Table[1][hour] * tax;
+                  Table[3][hour] =   Table[1][hour] - Table[2][hour];
                
                
           };
@@ -70,9 +73,9 @@ and open the template in the editor.
             <tr>
                 <th>Hours</th>
                 <th>GrossPay</th>
-                <th>Payrate</th>
                 <th>Taxes</th>
                 <th>Net Pay</th>
+                <th>Payrate</th>
             </tr>
 
 
@@ -80,22 +83,29 @@ and open the template in the editor.
         //Generate a table
         
             for(var hour=1; hour<=72;hour++){
-            
-          
-          
-          
             str+="<tr>";
-            str+="<td>"+Table[0][hour]+"</td>";
-            str+="<td>"+Table[1][hour]+"</td>";
-            str+="<td>"+payRate+"</td>";
-            str+="<td>"+Table[2][hour].toFixed(2)+"</td>";
-            str+="<td>"+Table[3][hour]+"</td>";
+            str+=("<td>"+Table[0][hour]+"</td>");
+            
+            for(var col=1;col<cols;col++){
+                    str+=("<td>"+Table[col][hour].toFixed(2)+"</td>");
+                    
+            }
             
             str+="</tr>";
+            }
+            document.write(str);
+            document.write("<p>Number of Rows = "+Table[0].length+"</p>");
+            document.write("<p>Number of Rows = "+Table[1].length+"</p>");
+            document.write("<p>Number of Rows = "+Table[4].legnth+"</p>");
+            document.write("<p>Number of Rows = "+Table[2].length+"</p>");
+            document.write("<p>Number of Rows = "+Table[3].length+"</p>");
+            document.write("<p>Number of Columns = "+Table.length+"</p>");
+            document.write("<p>Type of Rows = "+typeof(Table[3])+"</p>");
+            document.write("<p>Type of Columns "+typeof(Table) +"</p>");
             
             
-        };
-        document.write(str);
+        
+        
     </script>
     </table>
     </body>
