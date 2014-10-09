@@ -1,4 +1,4 @@
-<script src="getForm.js">
+<script >
   /*
    * Christopher Vasquez
    * September 15, 2014
@@ -15,23 +15,31 @@ and open the template in the editor.
         <title>Savings Strings</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <script type="text/javascript"  src="getForm.js"></script>
     </head>
     <body>
         <h1>Savings String Table</h1>
         <script type="text/javascript">
 
-        var url=document.location.href;
+          var url = document.location.href;
+           $_GET =2Dimension(url);
+          for (property in $_GET) {
+           document.write(property + "=" + $_GET[property] + "</br>");
+          }
+        
     
-        var form = getForm(url);
+        
+          var payRate = $_GET["pay"];
+          var hours = $_GET["hours"];
 
-          var ovt= getForm["dbl"];//Hour at which over time starts
-          var Trip= getForm["triple"];//Hour at which triple time starts.
-          var tax = getForm["tax"]; //unit =$'s
+
+          var ovt= 20;//Hour at which over time starts
+          var Trip= 40;//Hour at which triple time starts.
+          var tax = .1; //unit =$'s
           var str="";
-          var payRate = getForm["pay"];
           var Table=[];
           var cols=5;
-          var hours = getForm["hours"];
+          
           for(var col=0;col<cols;col++){
                         Table[col]=[];
           }
@@ -43,13 +51,13 @@ and open the template in the editor.
           Table[1][0]=0; //gross[0]=0;
           Table[2][0]=0; //taxes[0]=0;
           Table[3][0]=0; //netPay[0]=0;
-          Table[4][0]= payRate; //pAYRATE
+          Table[4][0]=payRate; //pAYRATE
           
           
           
-         for(var hour=1; hour<= hours;hour++){
-              Table[0][hour]=hour;
-              Table[4][hour] = payRate;
+         for(var hour=1; hour<=hours;hour++){
+              Table[0][hour]= hour;
+              Table[4][hour] = 11.50;
               if (hour<ovt){
                   Table[1][hour]  = Table[0][hour] *  Table[4][hour];
               }else if(hour<=Trip){
@@ -71,11 +79,7 @@ and open the template in the editor.
             
           
          
-            document.write("<p>dbl= "+ovt+"</p>");
-            document.write("<p>riple= " +Trip +"</p>");
-            document.write("<p>tax= "+tax +"</p>");
-            document.write("<p>hours= "+hours +"</p>");
-            document.write("<p>payRate="+payRate +"</p>");
+           
             </script>
           
    <table width="200" border="1">
@@ -112,7 +116,7 @@ and open the template in the editor.
             document.write("<p>Type of Rows = "+typeof(Table[3])+"</p>");
             document.write("<p>Type of Columns "+typeof(Table) +"</p>");
             
-        </script>
+        
             
             
         
