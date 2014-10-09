@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Create the _Get Object</title>
+<script type="text/javascript" src="getForm.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+	var url=document.location.href;
+	$_GET=getForm(url);
+	for(property in $_GET){
+		document.write(property+"="+$_GET[property]+"</br>");
+	}
+
+	var dbl =20;
+	var triple = 40;
+	var tax = .1;
+	document.write("Double time stats at 20" +"</br>");
+    document.write("Triple time starts at 40" +"</br>");
+    document.write("Uncle Sam's cut of the monies is 10%" +"</br");
+</script>
+</body>
+</html>
