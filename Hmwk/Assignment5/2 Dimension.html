@@ -20,12 +20,12 @@ and open the template in the editor.
         <h1>Savings String Table</h1>
         <script type="text/javascript">
 
-        var url=document.location.href;
+        
     
-        var formGet = getForm(url);
-          var ovt= getform["dbl"];//Hour at which over time starts
-          var Trip= getform["triple"];//Hour at which triple time starts.
-          var tax = getform["tax"]; //unit =$'s
+        
+          var ovt= 20;//Hour at which over time starts
+          var Trip= 40;//Hour at which triple time starts.
+          var tax = .1; //unit =$'s
           var str="";
           var payRate = 11.50;
           var Table=[];
@@ -100,7 +100,7 @@ and open the template in the editor.
             document.write(str);
             document.write("<p>Number of Rows = "+Table[0].length+"</p>");
             document.write("<p>Number of Rows = "+Table[1].length+"</p>");
-            document.write("<p>Number of Rows = "+Table[4].legnth+"</p>");
+            document.write("<p>Number of Rows = "+Table[4].length+"</p>");
             document.write("<p>Number of Rows = "+Table[2].length+"</p>");
             document.write("<p>Number of Rows = "+Table[3].length+"</p>");
             document.write("<p>Number of Columns = "+Table.length+"</p>");

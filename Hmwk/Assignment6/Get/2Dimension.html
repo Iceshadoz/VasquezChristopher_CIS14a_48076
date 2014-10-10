@@ -21,8 +21,8 @@ and open the template in the editor.
         <h1>Savings String Table</h1>
         <script type="text/javascript">
 
-          var url = document.location.href;
-           $_GET =2Dimension(url);
+          var url = (document.location.href);
+           $_GET = getForm(url);
           for (property in $_GET) {
            document.write(property + "=" + $_GET[property] + "</br>");
           }
@@ -40,6 +40,7 @@ and open the template in the editor.
           var Table=[];
           var cols=5;
           
+          
           for(var col=0;col<cols;col++){
                         Table[col]=[];
           }
@@ -48,27 +49,28 @@ and open the template in the editor.
               
           //Intilize values
           Table[0][0]=0; //hour[0]=0;
-          Table[1][0]=0; //gross[0]=0;
-          Table[2][0]=0; //taxes[0]=0;
-          Table[3][0]=0; //netPay[0]=0;
-          Table[4][0]=payRate; //pAYRATE
+          Table[1][0]=0; //gross[1]=0;
+          Table[2][0]=0; //taxes[2]=0;
+          Table[3][0]=0; //netPay[3]=0;
+          Table[4][0]=0; //pAYRATE
           
           
           
          for(var hour=1; hour<=hours;hour++){
-              Table[0][hour]= hour;
-              Table[4][hour] = 11.50;
+          var pay = 10;
+              Table[0][hour] = hour;
+              Table[4][hour] = pay;
               if (hour<ovt){
                   Table[1][hour]  = Table[0][hour] *  Table[4][hour];
               }else if(hour<=Trip){
                   Table[1][hour]  = (Table[0][hour]) *  Table[4][hour] +
                                     (Table[0][hour]-20) *   Table[4][hour] ;
-                                     Table[4][hour] = 23;
+                                     Table[4][hour] = pay *2;
               }else{
                   Table[1][hour]  =  Table[0][hour] *   Table[4][hour]+
                                     (Table[0][hour]-ovt) *   Table[4][hour] + 
                                     (Table[0][hour]-Trip) *  Table[4][hour];
-                                     Table[4][hour] = 34.50;
+                                     Table[4][hour] = pay *3;
               }
                   Table[2][hour] =   Table[1][hour] * tax;
                   Table[3][hour] =   Table[1][hour] - Table[2][hour];
