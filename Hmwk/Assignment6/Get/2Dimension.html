@@ -29,8 +29,9 @@ and open the template in the editor.
         
     
         
-          var payRate = $_GET["pay"];
+          var payrate = $_GET["pay"];
           var hours = $_GET["hours"];
+          var pay = payrate *1;
 
 
           var ovt= 20;//Hour at which over time starts
@@ -57,7 +58,7 @@ and open the template in the editor.
           
           
          for(var hour=1; hour<=hours;hour++){
-          var pay = 10;
+          
               Table[0][hour] = hour;
               Table[4][hour] = pay;
               if (hour<ovt){
